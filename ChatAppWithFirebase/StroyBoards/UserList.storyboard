@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="jjV-Mw-yfk">
+            <objects>
+                <navigationController id="rFV-Hz-53c" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4F9-XF-OBq">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="EVJ-IG-Xv2" kind="relationship" relationship="rootViewController" id="OI1-Lt-f21"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uSq-Xf-2wi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-797" y="-244"/>
+        </scene>
+        <!--User List View Controller-->
+        <scene sceneID="NxH-yx-m4R">
+            <objects>
+                <viewController storyboardIdentifier="UserListViewController" id="EVJ-IG-Xv2" customClass="UserListViewController" customModule="ChatAppWithFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="beA-va-3pv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bih-6u-7yM">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellId" id="6mv-lD-RZk" customClass="UserListTableViewCell" customModule="ChatAppWithFirebase" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6mv-lD-RZk" id="DOh-JO-EEm">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gGe-hF-4kW">
+                                                    <rect key="frame" x="10" y="7.5" width="65" height="65"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="gGe-hF-4kW" secondAttribute="height" multiplier="1:1" id="gru-pI-ze8"/>
+                                                        <constraint firstAttribute="width" constant="65" id="tiH-Gh-93Q"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="太郎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twt-KJ-BKB">
+                                                    <rect key="frame" x="90" y="29.5" width="35" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="twt-KJ-BKB" firstAttribute="centerY" secondItem="DOh-JO-EEm" secondAttribute="centerY" id="1h4-YJ-Ile"/>
+                                                <constraint firstItem="twt-KJ-BKB" firstAttribute="leading" secondItem="gGe-hF-4kW" secondAttribute="trailing" constant="15" id="Q9r-bV-kEu"/>
+                                                <constraint firstItem="gGe-hF-4kW" firstAttribute="leading" secondItem="DOh-JO-EEm" secondAttribute="leading" constant="10" id="geH-V7-aGI"/>
+                                                <constraint firstItem="gGe-hF-4kW" firstAttribute="centerY" secondItem="DOh-JO-EEm" secondAttribute="centerY" id="ssw-ZN-7NH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="userImageView" destination="gGe-hF-4kW" id="Ta5-FS-9cq"/>
+                                            <outlet property="usernameLabel" destination="twt-KJ-BKB" id="CXu-X6-W6t"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Gte-cZ-Oat" firstAttribute="bottom" secondItem="Bih-6u-7yM" secondAttribute="bottom" id="Rea-Op-Wq2"/>
+                            <constraint firstItem="Bih-6u-7yM" firstAttribute="top" secondItem="Gte-cZ-Oat" secondAttribute="top" id="aro-Fc-5xH"/>
+                            <constraint firstItem="Gte-cZ-Oat" firstAttribute="trailing" secondItem="Bih-6u-7yM" secondAttribute="trailing" id="hyg-Bj-556"/>
+                            <constraint firstItem="Bih-6u-7yM" firstAttribute="leading" secondItem="Gte-cZ-Oat" secondAttribute="leading" id="sJN-yU-b12"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Gte-cZ-Oat"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qFa-us-19M">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="LeT-7b-9FS">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MDO-2b-Yzm">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="会話を開始">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="startChatButton" destination="MDO-2b-Yzm" id="t9d-io-1Zu"/>
+                        <outlet property="userListTableView" destination="Bih-6u-7yM" id="iP9-mV-0oB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nx-u0-S5U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-71.014492753623188" y="-244.41964285714283"/>
+        </scene>
+    </scenes>
+</document>

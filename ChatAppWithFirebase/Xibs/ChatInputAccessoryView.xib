@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatInputAccessoryView" customModule="ChatAppWithFirebase" customModuleProvider="target">
+            <connections>
+                <outlet property="chatTextView" destination="N1t-gb-5Gl" id="rIW-ta-hgH"/>
+                <outlet property="sendButton" destination="wOb-x1-kYC" id="yQ4-af-Hxf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="721" height="230"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="メッセージがここに入ります" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="N1t-gb-5Gl">
+                    <rect key="frame" x="10" y="54" width="651" height="132"/>
+                    <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOb-x1-kYC">
+                    <rect key="frame" x="671" y="105" width="40" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="W2D-Dk-kF2"/>
+                        <constraint firstAttribute="width" constant="40" id="ayb-Jz-bYa"/>
+                    </constraints>
+                    <state key="normal" image="無料の紙飛行機アイコン"/>
+                    <connections>
+                        <action selector="tappedSendButton:" destination="-1" eventType="touchUpInside" id="0Df-eS-MPs"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="wOb-x1-kYC" firstAttribute="leading" secondItem="N1t-gb-5Gl" secondAttribute="trailing" constant="10" id="8hW-jC-0rY"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wOb-x1-kYC" secondAttribute="trailing" constant="10" id="Bwi-G9-vdl"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="N1t-gb-5Gl" secondAttribute="bottom" constant="10" id="I6g-Gl-vUR"/>
+                <constraint firstItem="N1t-gb-5Gl" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="eh7-D4-3Su"/>
+                <constraint firstItem="wOb-x1-kYC" firstAttribute="centerY" secondItem="N1t-gb-5Gl" secondAttribute="centerY" id="i7q-6W-5Pg"/>
+                <constraint firstItem="N1t-gb-5Gl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="zgZ-pL-yot"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="302.17391304347831" y="-103.125"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="無料の紙飛行機アイコン" width="128" height="128"/>
+    </resources>
+</document>
